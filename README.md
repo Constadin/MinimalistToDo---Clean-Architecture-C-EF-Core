@@ -30,4 +30,3 @@ MinimalistToDoList is a simple yet fully structured task management application 
 
 ---
 
-Feel free to clone and experiment with the project to understand clean architecture and modern .NET best practices!
