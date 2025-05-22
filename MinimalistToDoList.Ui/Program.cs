@@ -2,6 +2,7 @@
 
 
 using Microsoft.Extensions.DependencyInjection;
+using MinimalistToDoList.Application.ServiceCollectionExtensions;
 using MinimalistToDoList.Infrastructure.Data;
 using MinimalistToDoList.Infrastructure.ServiceCollectionExtensions;
 using MinimalistToDoList.Ui.appConfig;
@@ -26,8 +27,9 @@ await app.RunAsync();
 static ServiceProvider ConfigureServices()
 {
     IServiceCollection services = new ServiceCollection();
+    services.AddApplicationRegister();
     services.AddApplicationServices();
-    services.AddInfrastructure();
+    services.AddInfrastructureServices();
 
     return services.BuildServiceProvider();
 }

@@ -1,27 +1,24 @@
-﻿using MinimalistToDoList.Application.Mappings;
-using MinimalistToDoList.Core.Interfaces;
+﻿using MinimalistToDoList.Application.Intrefaces;
 
 namespace MinimalistToDoList.Ui.appConfig
 {
     public class AppStartUp
     {
-        private readonly ITodoRepository _todoRepository;
-        
-        public AppStartUp(ITodoRepository todoRepository)
+        private readonly ITodoService _todoService;
+
+        public AppStartUp(ITodoService todoService)
         {
-            _todoRepository = todoRepository;
+            _todoService = todoService;
         }
 
         public async Task RunAsync()
         {
-            
-            var todoEntities = await _todoRepository.GetAllAsync();
-          
-            var todoDtos = todoEntities.Select(TodoTaskMapper.ToDto).Where(dto => dto != null).ToList()!;
+
+            var tasks = await _todoService.GetAllTasksAsync();
  
             Console.WriteLine("----------- Todo List -----------\n");
 
-            foreach (var task in todoDtos)
+            foreach (var task in tasks)
             {
                 Console.WriteLine($"[{(task.IsCompleted ? "x" : " ")}]" +
                                     $" {task.Title}" +

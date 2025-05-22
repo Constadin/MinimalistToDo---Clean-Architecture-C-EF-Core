@@ -8,7 +8,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\MinimalistToDoList,Shared\MinimalistToDoList.Shared.csproj" />
-    <ProjectReference Include="..\MinimalistToDoList.Application\MinimalistToDoList.Application.csproj" />
     <ProjectReference Include="..\MinimalistToDoList.Core\MinimalistToDoList.Core.csproj" />
   </ItemGroup>
 
