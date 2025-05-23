@@ -1,5 +1,5 @@
 
-# MinimalistToDo
+# Minimalist ToDo
 
 MinimalistToDoList is a simple yet fully structured task management application built with Clean Architecture principles.
 
